@@ -2,25 +2,34 @@
   import Header from "./lib/Header.svelte";
   import games from "./data/games.json";
   import Item from "./lib/Item.svelte";
+  import { panier } from "./store.js";
 
   let selectedGame;
   let priceOfGames = 0;
 
-  let temppannier = [];
+  let temppannier;
+  panier.subscribe((value) => {
+    temppannier = value;
+  });
 
   function addToCart(game, quantity) {
     const existingGame = temppannier.find((item) => item.game.id === game.id);
 
-    if (existingGame) {
-      existingGame.quantity += quantity;
-      existingGame.priceOfGames += game.price * quantity;
-    } else {
+    if (existingGame && quantity > 0) {
+      const updatedGame = { ...existingGame };
+      updatedGame.quantity += quantity;
+      updatedGame.priceOfGames += game.price * quantity;
+
+      const updatedIndex = temppannier.findIndex(
+        (item) => item.game.id === game.id
+      );
+      temppannier.splice(updatedIndex, 1, updatedGame);
+      panier.set(temppannier);
+    } else if (quantity > 0) {
       priceOfGames = game.price * quantity;
       selectedGame = { game, quantity, priceOfGames };
-      temppannier = [...temppannier, selectedGame];
+      panier.set([...temppannier, selectedGame]);
     }
-
-    console.log(temppannier);
   }
 </script>
 

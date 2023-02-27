@@ -1,8 +1,17 @@
 <script>
   import { slide } from "svelte/transition";
+  import { panier, emptyBasket } from "../store.js";
+  import Item from "./Item.svelte";
 
-  export let numberOfArticles = 0;
   let basketListIsOpen = false;
+
+  $: totalQuantity = $panier.reduce((acc, item) => acc + item.quantity, 0);
+  $: totalPrice = $panier.reduce((acc, item) => acc + item.priceOfGames, 0);
+
+  function proceedToCheckout() {
+    emptyBasket();
+    basketListIsOpen = false;
+  }
 </script>
 
 <div class="shopping">
@@ -13,7 +22,8 @@
     on:click={() => (basketListIsOpen = true)}
     on:keypress={() => (basketListIsOpen = true)}
   />
-  <span>{numberOfArticles}</span>
+  <span>{totalQuantity}</span>
+  <span>{totalPrice} €</span>
 </div>
 
 {#if basketListIsOpen}
@@ -24,6 +34,22 @@
         on:click={() => (basketListIsOpen = false)}
         on:keypress={() => (basketListIsOpen = false)}>X</span
       >
+    </div>
+    <div class="basketContent">
+      {#each $panier as item}
+        <Item
+          game={item.game}
+          quantity={item.quantity}
+          isInCart={true}
+          let:quantity
+        >
+          <div class="game__price">{item.priceOfGames} €</div>
+        </Item>
+      {/each}
+    </div>
+    <div class="basketOrder">
+      <p>Total : <strong>{totalPrice} €</strong></p>
+      <button on:click={() => proceedToCheckout()}>Aller au paiement</button>
     </div>
   </div>
 {/if}
@@ -59,5 +85,9 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid;
+  }
+  .basketOrder {
+    display: flex;
+    flex-direction: column;
   }
 </style>

@@ -3,24 +3,38 @@
 
   export let game = {};
   export let quantity = 0;
+  export let isInCart;
 </script>
 
-<div>
-  <div class="image__container">
-    <img src={game.image} alt={game.title} />
-  </div>
-  <div class="game__info">
-    <h2 class="game__title">{game.title}</h2>
-    <div class="game__tags__container">
-      {#each game.tags as gametag}
-        <span class="game__tags">{gametag}</span>
-      {/each}
+{#if isInCart}
+  <div class="inBasket">
+    <div class="image__container">
+      <img src={game.image} alt={game.title} />
     </div>
-    <p class="game__price">{game.price} €</p>
-    <Quantity bind:quantity />
-    <slot {quantity} />
+    <div class="game__info">
+      <h2 class="game__title">{game.title}</h2>
+      <Quantity bind:quantity />
+      <slot {quantity} />
+    </div>
   </div>
-</div>
+{:else}
+  <div>
+    <div class="image__container">
+      <img src={game.image} alt={game.title} />
+    </div>
+    <div class="game__info">
+      <h2 class="game__title">{game.title}</h2>
+      <div class="game__tags__container">
+        {#each game.tags as gametag}
+          <span class="game__tags">{gametag}</span>
+        {/each}
+      </div>
+      <p class="game__price">{game.price} €</p>
+      <Quantity bind:quantity />
+      <slot {quantity} />
+    </div>
+  </div>
+{/if}
 
 <style>
   .image__container img {
@@ -58,5 +72,30 @@
   .game__price {
     font-size: 1.6rem;
     font-weight: bold;
+  }
+  .basketContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .inBasket {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+  .inBasket .image__container {
+    height: 100px;
+  }
+  .inBasket .image__container img {
+    width: 80px;
+  }
+  .inBasket .game__info {
+    padding: 6px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .inBasket .game__info h2 {
+    margin: 0;
+    font-size: 1.4rem;
   }
 </style>
