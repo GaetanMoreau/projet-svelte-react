@@ -1,9 +1,11 @@
 <script>
-  import { panier, emptyBasket } from "../store.js";
+  import { panier } from "../store.js";
   import BasketList from "./BasketList.svelte";
 
   let basketListIsOpen = false;
-  let totalPrice = 0;
+  $: totalPrice = parseFloat(
+    $panier.reduce((acc, item) => acc + item.priceOfGames, 0).toFixed(2)
+  );
 
   $: totalQuantity = $panier.reduce((acc, item) => acc + item.quantity, 0);
 </script>
