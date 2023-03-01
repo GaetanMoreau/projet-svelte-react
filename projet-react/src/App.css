@@ -1,42 +1,59 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.game__item {
+  width: calc(25% - 10px);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.game__header {
+  background-image: url("assets/game-background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.games__container {
+  margin-top: 4rem;
+}
+
+.games__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  padding: 0;
+  margin: 0 0 4rem 0;
+}
+
+.addCart {
+  font-size: 1.4rem;
+  background-color: #0e3a53;
+  border-radius: 0;
+  border: 0;
+  padding: 10px 16px;
+  margin-top: 20px;
+}
+
+.addCart:hover {
+  background-color: #000;
+}
+
+@media only screen and (max-width: 980px) {
+  .game__item {
+    width: calc(50% - 10px);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 480px) {
+  .game__item {
+    width: 100%;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

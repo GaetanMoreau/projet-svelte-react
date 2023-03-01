@@ -4,3 +4,20 @@
     display: flex;
     align-items: center;
 }
+
+span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo__container {
+    display: flex;
+    align-items: center;
+}
+
+.container-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
