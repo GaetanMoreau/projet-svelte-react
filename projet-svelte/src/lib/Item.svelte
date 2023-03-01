@@ -1,9 +1,10 @@
 <script>
   import Quantity from "./Quantity.svelte";
+  import { removeGameFromCart } from "../store.js";
 
   export let game = {};
   export let quantity = 0;
-  export let isInCart;
+  export let isInCart = false;
 </script>
 
 {#if isInCart}
@@ -16,6 +17,12 @@
       <Quantity bind:quantity />
       <slot {quantity} />
     </div>
+  </div>
+  <div>
+    <button
+      on:click={() => removeGameFromCart(game.id)}
+      class="game__remove-btn">Supprimer</button
+    >
   </div>
 {:else}
   <div>
@@ -73,14 +80,10 @@
     font-size: 1.6rem;
     font-weight: bold;
   }
-  .basketContent {
-    display: flex;
-    flex-direction: column;
-  }
   .inBasket {
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .inBasket .image__container {
     height: 100px;
@@ -97,5 +100,11 @@
   .inBasket .game__info h2 {
     margin: 0;
     font-size: 1.4rem;
+  }
+  .game__remove-btn {
+    padding: 8px 16px;
+    border-radius: 0;
+    font-size: 10px;
+    margin-top: 1rem;
   }
 </style>

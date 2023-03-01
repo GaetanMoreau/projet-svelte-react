@@ -30,6 +30,7 @@
       selectedGame = { game, quantity, priceOfGames };
       panier.set([...temppannier, selectedGame]);
     }
+    quantity = 0;
   }
 </script>
 
