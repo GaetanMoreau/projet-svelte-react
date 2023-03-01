@@ -73,3 +73,22 @@
     font-size: 10px;
     margin-top: 1rem;
 }
+
+.game__item {
+    width: calc(25% - 10px);
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 980px) {
+    .game__item {
+        width: calc(50% - 10px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .game__item {
+        width: 100%;
+    }
+}

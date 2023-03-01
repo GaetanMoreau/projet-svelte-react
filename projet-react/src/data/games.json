@@ -2,79 +2,147 @@
   {
     "id": 1,
     "title": "The Legend of Zelda: Breath of the Wild",
-    "tags": ["adventure", "action", "open-world"],
+    "tags": [
+      "Adventure",
+      "Action",
+      "Open-world"
+    ],
     "price": 59.99,
     "description": "Explore a vast open world in this critically acclaimed adventure game.",
     "editor": "Nintendo",
-    "platforms": ["Nintendo Switch"]
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "image": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58"
   },
   {
     "id": 2,
     "title": "Red Dead Redemption 2",
-    "tags": ["action", "western", "open-world"],
+    "tags": [
+      "Action",
+      "Western",
+      "Open-world"
+    ],
     "price": 49.99,
     "description": "Immerse yourself in the Wild West in this critically acclaimed action game.",
     "editor": "Rockstar Games",
-    "platforms": ["PlayStation 4", "Xbox One", "PC"]
+    "platforms": [
+      "PlayStation 4",
+      "Xbox One",
+      "PC"
+    ],
+    "image": "https://s1.gaming-cdn.com/images/products/5679/orig-fallback-v1/red-dead-redemption-2-pc-jeu-rockstar-cover.jpg?v=1647026658"
   },
   {
     "id": 3,
     "title": "Minecraft",
-    "tags": ["sandbox", "survival", "multiplayer"],
+    "tags": [
+      "Sandbox",
+      "Survival",
+      "Multiplayer"
+    ],
     "price": 19.99,
     "description": "Build and explore your own blocky world in this hugely popular sandbox game.",
     "editor": "Mojang",
-    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"]
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "image": "https://s2.gaming-cdn.com/images/products/442/orig/minecraft-java-et-bedrock-edition-pc-jeu-cover.jpg?v=1674156218"
   },
   {
     "id": 4,
     "title": "Super Smash Bros. Ultimate",
-    "tags": ["fighting", "multiplayer"],
+    "tags": [
+      "Fighting",
+      "Multiplayer"
+    ],
     "price": 59.99,
     "description": "Gather your favorite video game characters and battle it out in this fan-favorite fighting game.",
     "editor": "Nintendo",
-    "platforms": ["Nintendo Switch"]
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "image": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/fr_CA/games/switch/s/super-smash-bros-ultimate-switch/hero"
   },
   {
     "id": 5,
     "title": "The Witcher 3: Wild Hunt",
-    "tags": ["action", "open-world", "fantasy"],
+    "tags": [
+      "Action",
+      "Open-world",
+      "Fantasy"
+    ],
     "price": 39.99,
     "description": "Embark on a dark and epic quest in this award-winning action RPG.",
     "editor": "CD Projekt Red",
-    "platforms": ["PlayStation 4", "Xbox One", "PC"]
+    "platforms": [
+      "PlayStation 4",
+      "Xbox One",
+      "PC"
+    ],
+    "image": "https://s2.gaming-cdn.com/images/products/268/orig/the-witcher-3-wild-hunt-pc-jeu-gog-com-cover.jpg?v=1650526691"
   },
   {
     "id": 6,
     "title": "Overwatch",
-    "tags": ["shooter", "multiplayer"],
+    "tags": [
+      "Shooter",
+      "Multiplayer"
+    ],
     "price": 29.99,
     "description": "Team up and battle for glory in this highly popular multiplayer shooter.",
     "editor": "Blizzard Entertainment",
-    "platforms": ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch"]
+    "platforms": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "image": "https://global-img.gamergen.com/overwatch-cover_0190000000837895.jpg"
   },
   {
     "id": 7,
     "title": "Grand Theft Auto V",
-    "tags": ["action", "open-world"],
+    "tags": [
+      "Action",
+      "Open-world"
+    ],
     "price": 29.99,
     "description": "Join the criminal underworld and pull off heists in this massively popular action game.",
     "editor": "Rockstar Games",
-    "platforms": ["PlayStation 4", "Xbox One", "PC"]
+    "platforms": [
+      "PlayStation 4",
+      "Xbox One",
+      "PC"
+    ],
+    "image": "https://img.phonandroid.com/2022/11/GTA5-code-source-fuite.jpg"
   },
   {
     "id": 8,
     "title": "Animal Crossing: New Horizons",
-    "tags": ["simulation", "casual"],
+    "tags": [
+      "Simulation",
+      "Casual"
+    ],
     "price": 49.99,
     "description": "Create your own island paradise and live the life of your dreams in this relaxing simulation game.",
     "editor": "Nintendo",
-    "platforms": ["Nintendo Switch"]
+    "platforms": [
+      "Nintendo Switch"
+    ],
+    "image": "https://cdn.cdkeys.com/500x706/media/catalog/product/f/i/fifa-22-pc-game-origin-cover_14_.jpg"
   },
   {
     "id": 9,
     "title": "Fortnite",
-    "tags": ["shooter", "battle-royale", "multiplayer"],
+    "tags": [
+      "Shooter",
+      "Battle-royale",
+      "Multiplayer"
+    ],
     "price": 0,
     "description": "Join the battle royale and be the last person standing in this free-to-play shooter game.",
     "editor": "Epic Games",
@@ -85,12 +153,17 @@
       "Nintendo Switch",
       "iOS",
       "Android"
-    ]
+    ],
+    "image": "https://cdn1.epicgames.com/offer/fn/23BR_C4S1_EGS_Launcher_Blade_1200x1600_1200x1600-708ad0c7e0813b60cb2fda3e24e39401"
   },
   {
     "id": 10,
     "title": "Call of Duty: Warzone",
-    "tags": ["shooter", "battle-royale", "multiplayer"],
+    "tags": [
+      "Shooter",
+      "Battle-royale",
+      "Multiplayer"
+    ],
     "price": 0,
     "description": "Enter the arena and fight to be the last squad standing in this free-to-play battle royale game.",
     "editor": "Activision",
@@ -100,12 +173,17 @@
       "PlayStation 5",
       "Xbox One",
       "Xbox Series X/S"
-    ]
+    ],
+    "image": "https://image.jeuxvideo.com/medias-sm/163187/1631865322-4410-jaquette-avant.png"
   },
   {
     "id": 11,
     "title": "The Elder Scrolls V: Skyrim",
-    "tags": ["action", "open-world", "fantasy"],
+    "tags": [
+      "Action",
+      "Open-world",
+      "Fantasy"
+    ],
     "price": 39.99,
     "description": "Explore the vast world of Tamriel and battle dragons in this award-winning action RPG.",
     "editor": "Bethesda Softworks",
@@ -116,12 +194,17 @@
       "Xbox Series X/S",
       "PC",
       "Nintendo Switch"
-    ]
+    ],
+    "image": "https://s3.gaming-cdn.com/images/products/146/orig/the-elder-scrolls-v-skyrim-pc-jeu-steam-europe-cover.jpg?v=1661270991"
   },
   {
     "id": 12,
     "title": "FIFA 22",
-    "tags": ["sports", "soccer", "multiplayer"],
+    "tags": [
+      "Sports",
+      "Soccer",
+      "Multiplayer"
+    ],
     "price": 59.99,
     "description": "Play as your favorite soccer teams and compete against other players in this highly popular sports game.",
     "editor": "Electronic Arts",
@@ -132,12 +215,17 @@
       "Xbox Series X/S",
       "PC",
       "Nintendo Switch"
-    ]
+    ],
+    "image": "https://www.presse-citron.net/app/uploads/2021/09/tests-fifa-22.jpg"
   },
   {
     "id": 13,
     "title": "Assassin's Creed Valhalla",
-    "tags": ["action", "open-world", "historical"],
+    "tags": [
+      "Action",
+      "Open-world",
+      "Historical"
+    ],
     "price": 59.99,
     "description": "Take on the role of a Viking warrior and conquer England in this epic historical action game.",
     "editor": "Ubisoft",
@@ -147,12 +235,16 @@
       "Xbox One",
       "Xbox Series X/S",
       "PC"
-    ]
+    ],
+    "image": "https://cdn1.epicgames.com/400347196e674de89c23cc2a7f2121db/offer/AC%20KINGDOM%20PREORDER_STANDARD%20EDITION_EPIC_Key_Art_Portrait_640x854-640x854-288120c5573756cb988b6c1968cebd86.png"
   },
   {
     "id": 14,
     "title": "The Sims 4",
-    "tags": ["simulation", "life-simulation"],
+    "tags": [
+      "Simulation",
+      "Life-simulation"
+    ],
     "price": 39.99,
     "description": "Create and control your own virtual people and build the house of your dreams in this popular life simulation game.",
     "editor": "Electronic Arts",
@@ -162,6 +254,7 @@
       "PlayStation 5",
       "Xbox One",
       "Xbox Series X/S"
-    ]
+    ],
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7f/Sims4_Rebrand.png"
   }
 ]
