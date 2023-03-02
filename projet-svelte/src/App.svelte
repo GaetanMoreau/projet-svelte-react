@@ -7,20 +7,20 @@
 
 <Header />
 <main>
-  <section class="game__header">Buy your games cheaper here !</section>
+  <section class="game__header">Achetez vos jeux moins chers ici !</section>
   <section class="games__container">
     <div class="container">
       <ul class="games__list">
         {#each games as game (game.id)}
-          <div class="game__item">
+          <li class="games__item">
             <Item {game} let:quantity>
               <button
-                class="addCart"
+                class="add__to__basket"
                 on:click={() => addGameToCart(game, quantity)}
                 >Ajouter au panier</button
               >
             </Item>
-          </div>
+          </li>
         {/each}
       </ul>
     </div>
@@ -28,7 +28,7 @@
 </main>
 
 <style>
-  .game__item {
+  .games__item {
     width: calc(25% - 10px);
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -59,7 +59,7 @@
     padding: 0;
     margin: 0 0 4rem 0;
   }
-  .addCart {
+  .add__to__basket {
     font-size: 1.4rem;
     background-color: #0e3a53;
     border-radius: 0;
@@ -67,17 +67,17 @@
     padding: 10px 16px;
     margin-top: 20px;
   }
-  .addCart:hover {
+  .add__to__basket:hover {
     background-color: #000;
   }
   @media only screen and (max-width: 980px) {
-    .game__item {
+    .games__item {
       width: calc(50% - 10px);
     }
   }
 
   @media only screen and (max-width: 480px) {
-    .game__item {
+    .games__item {
       width: 100%;
     }
   }

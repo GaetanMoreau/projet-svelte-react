@@ -45,7 +45,7 @@ function App() {
     <>
       <Header></Header>
       <main>
-        <section className="game__header">Achetez vos jeux moins chère ici !</section>
+        <section className="game__header">Achetez vos jeux moins chers ici !</section>
         <section className="games__container">
           <div className="container">
             <ul className="games__list">

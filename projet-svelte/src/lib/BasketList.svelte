@@ -6,10 +6,13 @@
     export let basketListIsOpen;
     export let totalQuantity;
     export let totalPrice;
+
     $: totalPrice = parseFloat(
         $panier.reduce((acc, item) => acc + item.priceOfGames, 0).toFixed(2)
     );
+
     $: totalQuantity = $panier.reduce((acc, item) => acc + item.quantity, 0);
+
     function proceedToCheckout() {
         console.log("Votre panier est vide");
         if (totalQuantity > 0) {

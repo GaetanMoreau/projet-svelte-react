@@ -8,7 +8,7 @@
 </script>
 
 {#if isInCart}
-  <div class="inBasket">
+  <div class="in__basket">
     <div class="image__container">
       <img src={game.image} alt={game.title} />
     </div>
@@ -80,24 +80,24 @@
     font-size: 1.6rem;
     font-weight: bold;
   }
-  .inBasket {
+  .in__basket {
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
   }
-  .inBasket .image__container {
+  .in__basket .image__container {
     height: 100px;
   }
-  .inBasket .image__container img {
+  .in__basket .image__container img {
     width: 80px;
   }
-  .inBasket .game__info {
+  .in__basket .game__info {
     padding: 6px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  .inBasket .game__info h2 {
+  .in__basket .game__info h2 {
     margin: 0;
     font-size: 1.4rem;
   }
