@@ -3,6 +3,31 @@
   import games from "./data/games.json";
   import Item from "./lib/Item.svelte";
   import { addGameToCart } from "./store.js";
+
+  let searchedGame = "";
+
+  function searchGamesByTitle(e) {
+    searchedGame = e.target.value;
+  }
+
+  function filterGamesByPrice(e) {
+    switch (e.target.value) {
+      case "low":
+        gameToDisplayPrice = games.slice().sort((a, b) => a.price - b.price);
+        break;
+      case "high":
+        gameToDisplayPrice = games.slice().sort((a, b) => b.price - a.price);
+        break;
+      default:
+        gameToDisplayPrice = games.slice();
+        break;
+    }
+  }
+
+  $: gameToDisplaySearch = games.filter((game) =>
+    game.title.toLowerCase().includes(searchedGame.toLowerCase())
+  );
+  $: gameToDisplayPrice = gameToDisplaySearch;
 </script>
 
 <Header />
@@ -10,8 +35,21 @@
   <section class="game__header">Achetez vos jeux moins chers ici !</section>
   <section class="games__container">
     <div class="container">
+      <div class="games__filters">
+        <input
+          type="text"
+          placeholder="Rechercher par nom"
+          on:input={(e) => searchGamesByTitle(e)}
+          bind:value={searchedGame}
+        />
+        <select name="game-price" on:change={(e) => filterGamesByPrice(e)}>
+          <option value="none">Trier par :</option>
+          <option value="high">Prix : les plus chers</option>
+          <option value="low">Prix : les moins chers</option>
+        </select>
+      </div>
       <ul class="games__list">
-        {#each games as game (game.id)}
+        {#each gameToDisplayPrice as game (game.id)}
           <li class="games__item">
             <Item {game} let:quantity>
               <button
@@ -69,6 +107,23 @@
   }
   .add__to__basket:hover {
     background-color: #000;
+  }
+  .games__filters {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: flex-end;
+  }
+  input[type="text"],
+  select {
+    font-size: 1.2rem;
+    padding: 1.2rem 2rem;
+    margin: 0.8rem 0;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
   }
   @media only screen and (max-width: 980px) {
     .games__item {
