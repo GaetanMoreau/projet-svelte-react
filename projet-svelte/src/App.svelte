@@ -2,7 +2,6 @@
   import Header from "./lib/Header.svelte";
   import games from "./data/games.json";
   import Item from "./lib/Item.svelte";
-  import { addGameToCart } from "./store.js";
 
   let searchedGame = "";
 
@@ -51,13 +50,7 @@
       <ul class="games__list">
         {#each gameToDisplayPrice as game (game.id)}
           <li class="games__item">
-            <Item {game} let:quantity>
-              <button
-                class="add__to__basket"
-                on:click={() => addGameToCart(game, quantity)}
-                >Ajouter au panier</button
-              >
-            </Item>
+            <Item {game} />
           </li>
         {/each}
       </ul>
@@ -96,17 +89,6 @@
     gap: 1.3rem;
     padding: 0;
     margin: 0 0 4rem 0;
-  }
-  .add__to__basket {
-    font-size: 1.4rem;
-    background-color: #0e3a53;
-    border-radius: 0;
-    border: 0;
-    padding: 10px 16px;
-    margin-top: 20px;
-  }
-  .add__to__basket:hover {
-    background-color: #000;
   }
   .games__filters {
     display: flex;

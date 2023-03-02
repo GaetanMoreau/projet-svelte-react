@@ -1,10 +1,13 @@
 <script>
   import Quantity from "./Quantity.svelte";
-  import { removeGameFromCart } from "../store.js";
+  import { addGameToCart, removeGameFromCart } from "../store.js";
 
   export let game = {};
   export let quantity = 0;
   export let isInCart = false;
+  const resetQuantity = () => {
+    quantity = 0;
+  };
 </script>
 
 {#if isInCart}
@@ -14,7 +17,7 @@
     </div>
     <div class="game__info">
       <h2 class="game__title">{game.title}</h2>
-      <Quantity bind:quantity />
+      <Quantity {quantity} />
       <slot {quantity} />
     </div>
   </div>
@@ -38,7 +41,18 @@
       </div>
       <p class="game__price">{game.price} €</p>
       <Quantity bind:quantity />
-      <slot {quantity} />
+      <!-- <slot {quantity} /> -->
+      <!-- <button
+        class="add__to__basket"
+        on:click={() => addGameToCart(game, quantity)}>Ajouter au panier</button
+      > -->
+      <button
+        class="add__to__basket"
+        on:click={() => {
+          addGameToCart(game, quantity);
+          resetQuantity();
+        }}>Ajouter au panier</button
+      >
     </div>
   </div>
 {/if}
@@ -106,5 +120,16 @@
     border-radius: 0;
     font-size: 10px;
     margin-top: 1rem;
+  }
+  .add__to__basket {
+    font-size: 1.4rem;
+    background-color: #0e3a53;
+    border-radius: 0;
+    border: 0;
+    padding: 10px 16px;
+    margin-top: 20px;
+  }
+  .add__to__basket:hover {
+    background-color: #000;
   }
 </style>
