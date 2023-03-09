@@ -5,6 +5,7 @@
   export let game = {};
   export let quantity = 0;
   export let isInCart = false;
+
   const resetQuantity = () => {
     quantity = 0;
   };
@@ -17,8 +18,15 @@
     </div>
     <div class="game__info">
       <h2 class="game__title">{game.title}</h2>
-      <Quantity {quantity} />
-      <slot {quantity} />
+      <h2 class="game__title">Quantité : {quantity}</h2>
+      <Quantity
+        bind:quantity
+        on:increment={() => {
+          addGameToCart(game, quantity + 1);
+          console.log("ouga", quantity);
+          quantity += 1;
+        }}
+      />
     </div>
   </div>
   <div>
@@ -41,11 +49,6 @@
       </div>
       <p class="game__price">{game.price} €</p>
       <Quantity bind:quantity />
-      <!-- <slot {quantity} /> -->
-      <!-- <button
-        class="add__to__basket"
-        on:click={() => addGameToCart(game, quantity)}>Ajouter au panier</button
-      > -->
       <button
         class="add__to__basket"
         on:click={() => {

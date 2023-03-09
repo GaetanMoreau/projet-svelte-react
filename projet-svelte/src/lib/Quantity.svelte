@@ -1,5 +1,11 @@
 <script>
   export let quantity = 0;
+
+  function increment() {
+    quantity++;
+    const event = new CustomEvent("increment");
+    dispatchEvent(event);
+  }
 </script>
 
 <div class="quantity">
@@ -8,7 +14,7 @@
     on:click={() => (quantity > 0 ? quantity-- : quantity)}>-</button
   >
   <input class="quantity__input" type="number" value={quantity} min="0" />
-  <button class="quantity__options" on:click={() => quantity++}>+</button>
+  <button class="quantity__options" on:click={() => increment()}>+</button>
 </div>
 
 <style>
