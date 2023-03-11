@@ -7,10 +7,10 @@ export default function Quantity({ quantity, onQuantityChange }) {
         onQuantityChange(value >= 0 ? value : 0);
     };
     const incrementQuantity = () => {
-        onQuantityChange(quantity++);
+        onQuantityChange(quantity + 1)
     };
     const decrementQuantity = () => {
-        onQuantityChange(quantity > 0 ? quantity-- : quantity);
+        onQuantityChange(quantity > 0 ? quantity - 1 : quantity);
     };
 
     return (

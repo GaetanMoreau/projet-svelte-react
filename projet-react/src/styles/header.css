@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-span {
+.header__title {
     font-size: 2rem;
     font-weight: bold;
     color: #fff;

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Header from "./lib/Header";
 import Item from "./lib/Item";
-import games from "./data/games.json"
-
+import games from "./data/games.json";
 import "./App.css";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
     }
   };
 
-
   const removeProduct = (index) => {
     const newCart = [...cart];
     newCart.splice(index, 1);
@@ -40,21 +38,22 @@ function App() {
     setCart(newCart);
   };
 
-  console.log("cart", cart);
+
+  const removeAllProduct = () => {
+    const newCart = [];
+    setCart(newCart);
+  };
+
   return (
     <>
-      <Header></Header>
+      <Header cart={cart} setCart={setCart} removeProduct={removeProduct} updateProduct={updateProduct} removeAllProduct={removeAllProduct} />
       <main>
-        <section className="game__header">Achetez vos jeux moins chers ici !</section>
+        <section className="game__header"><h1>Achetez vos jeux moins chers ici !</h1></section>
         <section className="games__container">
           <div className="container">
             <ul className="games__list">
               {gamesList.map((game) => (
-                <Item
-                  key={game.id}
-                  game={game}
-                  addToCart={addToCart}
-                />
+                <Item key={game.id} game={game} addToCart={addToCart} />
               ))}
             </ul>
           </div>

@@ -1,0 +1,99 @@
+.basket__list {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 300px;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    font-size: 1.6rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin-top: 0;
+}
+
+.basket__list span {
+    color: #000;
+}
+
+.basket__list ul {
+    padding: 0;
+}
+
+.bastket__close {
+    cursor: pointer;
+}
+
+.basketList__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.basket__order {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+.basket__order p {
+    margin: 0;
+}
+
+.basket__order button {
+    font-size: 1.4rem;
+    background-color: #0e3a53;
+    border-radius: 0;
+    border: 0;
+    padding: 10px 16px;
+    margin-top: 20px;
+}
+
+.basket__order button:hover {
+    background-color: #000;
+}
+
+.in__basket {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.in__basket .image__container {
+    height: 100px;
+}
+
+.in__basket .image__container img {
+    width: 80px;
+}
+
+.in__basket .game__info {
+    padding: 6px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.in__basket .game__info h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.in__basket .game__title,
+.in__basket .game__price {
+    margin: 0;
+}
+
+.in__basket .game__price {
+    font-size: 1.2rem;
+}
+
+.in__basket__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
