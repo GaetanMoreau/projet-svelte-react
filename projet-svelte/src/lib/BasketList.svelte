@@ -2,6 +2,7 @@
   import { slide } from "svelte/transition";
   import Item from "./Item.svelte";
   import { panier, emptyBasket } from "../store.js";
+  import { addGameToCart } from "../store.js";
 
   export let basketListIsOpen;
   export let totalQuantity;
@@ -34,7 +35,12 @@
   </div>
   <div>
     {#each $panier as item}
-      <Item game={item.game} quantity={item.quantity} isInCart={true}>
+      <Item
+        game={item.game}
+        quantity={item.quantity}
+        isInCart={true}
+        on:update={(e) => addGameToCart(item.game, e.detail)}
+      >
         <div class="game__price">{item.priceOfGames.toFixed(2)} €</div>
       </Item>
     {/each}

@@ -1,19 +1,36 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
   export let quantity = 0;
 
   function increment() {
     quantity++;
-    const event = new CustomEvent("increment");
-    dispatchEvent(event);
+    dispatch("update", quantity);
+  }
+
+  function decrement() {
+    if (quantity > 0) {
+      quantity--;
+      dispatch("update", quantity);
+    }
+  }
+
+  function handleInput(event) {
+    quantity = +event.target.value;
+    dispatch("update", quantity);
   }
 </script>
 
 <div class="quantity">
-  <button
-    class="quantity__options"
-    on:click={() => (quantity > 0 ? quantity-- : quantity)}>-</button
-  >
-  <input class="quantity__input" type="number" value={quantity} min="0" />
+  <button class="quantity__options" on:click={() => decrement()}>-</button>
+  <input
+    class="quantity__input"
+    type="number"
+    bind:value={quantity}
+    min="0"
+    on:input={handleInput}
+  />
   <button class="quantity__options" on:click={() => increment()}>+</button>
 </div>
 

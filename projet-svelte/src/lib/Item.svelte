@@ -19,14 +19,7 @@
     <div class="game__info">
       <h2 class="game__title">{game.title}</h2>
       <h2 class="game__title">Quantité : {quantity}</h2>
-      <Quantity
-        bind:quantity
-        on:increment={() => {
-          addGameToCart(game, quantity + 1);
-          console.log("ouga", quantity);
-          quantity += 1;
-        }}
-      />
+      <Quantity {quantity} on:update={(e) => addGameToCart(game, e.detail)} />
     </div>
   </div>
   <div>
