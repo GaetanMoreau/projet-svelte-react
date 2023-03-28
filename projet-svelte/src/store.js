@@ -24,15 +24,19 @@ export function addGameToCart(game, newQuantity) {
     const existingGame = cartValue.find((item) => item.game.id === game.id);
 
     if (existingGame) {
-      const updatedGame = { ...existingGame };
-      updatedGame.quantity = newQuantity;
-      updatedGame.priceOfGames = game.price * newQuantity;
+      if (newQuantity === 0) {
+        return cartValue.filter((item) => item.game.id !== game.id);
+      } else {
+        const updatedGame = { ...existingGame };
+        updatedGame.quantity = newQuantity;
+        updatedGame.priceOfGames = game.price * newQuantity;
 
-      const updatedIndex = cartValue.findIndex(
-        (item) => item.game.id === game.id
-      );
-      cartValue.splice(updatedIndex, 1, updatedGame);
-      return cartValue;
+        const updatedIndex = cartValue.findIndex(
+          (item) => item.game.id === game.id
+        );
+        cartValue.splice(updatedIndex, 1, updatedGame);
+        return cartValue;
+      }
     } else if (newQuantity > 0) {
       const priceOfGames = game.price * newQuantity;
       const selectedGame = { game, quantity: newQuantity, priceOfGames };
